@@ -1,0 +1,75 @@
+/* Preloader */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling during the preloader */
+  }
+  
+  .preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff; /* Customize based on your design */
+  }
+  
+  #logo {
+    width: 150px; /* Adjust the size of the preloader logo */
+    height: 150px;
+    animation: rotate 2s ease-in-out, fly 1.5s ease-in-out 2s forwards;
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes fly {
+    0% { transform: translate(0, 0); opacity: 1; } /* Start in the center */
+    100% { transform: translate(-45vw, -45vh); opacity: 1; } /* Fly to top-left */
+  }
+  
+  /* Hide the main content and navbar initially */
+  #main-content {
+    display: none;
+  }
+  
+  /* Once loaded, show the main content */
+  .loaded #main-content {
+    display: block;
+  }
+  
+  .loaded .preloader {
+    display: none;
+  }
+  
+  /* Ensure the navbar logo matches the preloader logo */
+  #nav-logo {
+    width: 50px; /* Adjust based on your navbar design */
+    height: 50px;
+  }
+  
+
+  /* Custom styling for the navbar search bar */
+.form-inline input.form-control {
+    width: 250px; /* Adjust the width as needed */
+  }
+
+  
+  @media (max-width: 768px) {
+    .form-inline {
+      width: 100%; /* Make the search bar responsive */
+      margin-top: 10px;
+    }
+  
+    .form-inline input.form-control {
+      width: 100%; /* Full-width search bar on small screens */
+    }
+  }
+  
+
+  .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
